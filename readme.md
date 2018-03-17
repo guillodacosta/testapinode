@@ -17,9 +17,9 @@ Run `npm start` to run the server.
 
 
 | Method | Rute                  | Functionality            |
-| : --- :| :-------------------  | : -------------------- : |
+| ---  | ---  | ---    |
 | GET    | /hotels               | List all the hotels      |
-| GET    | /hotels?filter={}     | Filter the hotels ex filter = {"name": "hotel"} will return all hotels that contain the word 'hotel'      |
+| GET    | /hotels?filter={}     | Filter the hotels ex filter = {"name": "hotel"} will return all hotels that contain the word 'hotel' |
 | GET    | /hotels/:id           | return one hotel         |
 | POST   | /hotels               | Save one or more hotels (you can send an object or an array)     |
 | DELETE | /hotels/:id           | Remove an hotel          |
