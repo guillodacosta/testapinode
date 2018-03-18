@@ -3,9 +3,10 @@ var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
     port = process.env.PORT || 8080,
+    cors = require('cors'),
     mongoURL = 'mongodb://admin:admin@node-store-rest-shard-00-00-ev4hi.mongodb.net:27017,node-store-rest-shard-00-01-ev4hi.mongodb.net:27017,node-store-rest-shard-00-02-ev4hi.mongodb.net:27017/test?ssl=true&replicaSet=node-store-rest-shard-0&authSource=admin';
 
-
+app.use(cors());
 mongoose.Promise = global.Promise;
 mongoose.connect(`${mongoURL}`);
 
