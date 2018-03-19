@@ -131,14 +131,25 @@ function filter_hotels(req, res) {
         var filters = JSON.parse(req.query.filter);
         var find = {};
         for (var filter in filters) {
-            if (isNaN(filters[filter])) {
+            if (Array.isArray(filters[filter])) {
+                let $or = [];
+
+                filters[filter].forEach((value) => {
+                    const aux = {};
+                    aux[filter] = { $eq: value };
+
+                    $or.push(aux);
+                });
+
+                find['$or'] = $or;
+
+            } else if (isNaN(filters[filter])) {
                 find[filter] = { $regex: `.*${filters[filter]}.*`, $options: 'i' }
             } else {
                 find[filter] = { $eq: filters[filter] }
             }
 
         }
-
 
         Hotel.find(find, function (err, hotels) {
             var response;
