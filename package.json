@@ -1,19 +1,30 @@
 {
-  "name": "almundoapi",
-  "version": "1.0.0",
-  "description": "",
+  "name": "api-hotels",
+  "version": "0.0.1",
+  "author": "guillodiacosta@gmail.com",
+  "license": "MIT",
+  "description": "api test hotels",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
-  "author": "Oscar Pulido",
-  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "mongoose": "^5.0.10",
-    "nodemon": "^1.17.2"
-  }
+    "nodemon": "^1.17.2",
+    "socket.io": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.0.0",
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb-base": "^10.0.1",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-import": "^2.2.0",
+    "nodemon": "^1.11.0"
+  },
+  "private": true
 }

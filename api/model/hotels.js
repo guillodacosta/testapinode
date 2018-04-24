@@ -1,14 +1,12 @@
-var mongoose = require('mongoose'),
-    Schema = mongoose.Schema;
+var mongoose = require('mongoose');
 
-
-var HotelSchema = new Schema({
-    name: String,
-    stars: Number,
-    price: Number,
-    image: String,
-    amenities: [String]
+const HotelSchema = new mongoose.Schema({
+  amenities: [String],
+  id: String,
+  image: String,
+  name: String,
+  price: Number,
+  stars: Number
 });
-
 
 module.exports = mongoose.model('Hotels', HotelSchema);

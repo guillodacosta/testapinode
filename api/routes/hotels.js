@@ -1,14 +1,15 @@
-module.exports = function (app, appEnv) {
-    var routes = appEnv.routes;
-    var hotelController = require('./../controllers/hotels-controller');
+var hotelController = require('./../controllers/hotelCtrl');
 
-
-    routes.route('/hotels')
-        .post(hotelController.store)
-        .get(hotelController.list_hotel);
-
-    routes.route('/hotels/:id')
-        .get(hotelController.show)
-        .delete(hotelController.delete)
-        .put(hotelController.update);
+routes = (app, appEnv) => {
+  var _routes = appEnv.routes;
+  _routes.route('/hotels')
+    .get(hotelController.getList)
+    .post(hotelController.save);
+  _routes.route('/hotels/:id')
+    .get(hotelController.get)
+    .delete(hotelController.remove)
+    .put(hotelController.update);
 }
+
+
+module.exports = {routes}
